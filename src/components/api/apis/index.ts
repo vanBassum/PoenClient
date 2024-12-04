@@ -1,3 +1,5 @@
 /* tslint:disable */
 /* eslint-disable */
-export * from './CoinInfoApi';
+export * from './QuoteApi';
+export * from './TokenApi';
+export * from './TransactionApi';

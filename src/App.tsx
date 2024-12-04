@@ -1,31 +1,17 @@
-import { useEffect, useState } from 'react';
-import './App.css';
-import WebApi, { CoinInfoDto } from './components/api/WebApi'; // Import both WebApi and PersonDto
+import React, { useEffect, useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import TokenList from './components/TokenList';
+import TransactionList from './components/TransactionList';
+
 
 function App() {
-  const [coins, setCoins] = useState<CoinInfoDto[]>([]);
-
-  useEffect(() => {
-    const requestParameters = {
-      pageNo: 1,
-      pageSize: 10,
-    };
-
-    WebApi.Coins.coinInfoGet(requestParameters)
-      .then((response) => {
-        console.log('API call successful:', response);
-        setCoins(response.data || []);
-      })
-      .catch((error) => {
-        console.error('API call failed:', error);
-      });
-  }, []);
-
   return (
-    <div className="App">
-      {coins.length }
+    <div className="container mt-4">
+      <TokenList></TokenList>
+      
+      <TransactionList></TransactionList>
     </div>
   );
 }
 
-export default App
+export default App;
