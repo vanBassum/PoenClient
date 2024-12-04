@@ -5,7 +5,7 @@ import WebApi, { Token } from './api/WebApi';
 const formatPrice = (price: number | undefined): string => {
   if (price === undefined || price === null) return 'N/A';
   if (price >= 1000) {
-    return `$${(price / 1000).toFixed(3)}k`;
+    return `$${(price / 1000).toFixed(2)}k`;
   }
   return `$${price.toFixed(2)}`;
 };
@@ -30,7 +30,6 @@ function TokenList() {
         <div className="row align-items-center justify-content-center">
           <div className="col-6">
             <h5 className="card-title widget-card-title text-white mb-1">Tokens</h5>
-            <p className="mb-0 fs-7 text-white">Overview</p>
           </div>
           <div className="col-6 d-flex align-items-center justify-content-end">
             <span className="fs-1 bsb-w-85 bsb-h-85 text-white border border-3 border-primary-subtle rounded-circle d-flex align-items-center justify-content-center">
